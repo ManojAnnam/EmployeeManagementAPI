@@ -3,7 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.572
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementAPI", "EmployeeManagementAPI\EmployeeManagementAPI.csproj", "{CAB3F965-9C33-44D8-A98D-396C143F9A6B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EmployeeManagementAPI", "EmployeeManagementAPI\EmployeeManagementAPI.csproj", "{CAB3F965-9C33-44D8-A98D-396C143F9A6B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementAPI.Business", "EmployeeManagementAPI.Business\EmployeeManagementAPI.Business.csproj", "{AAC8C2F7-861E-4AB8-9C69-C8235F439C69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementAPI.Models", "EmployeeManagementAPI.Models\EmployeeManagementAPI.Models.csproj", "{18A88FFE-EC38-4E0A-B952-7D239BB52121}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EmployeeManagementAPI.Repository", "EmployeeManagementAPI.Repository\EmployeeManagementAPI.Repository.csproj", "{4BD5F655-77E2-43DC-AEA5-B29F50F549B6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +21,18 @@ Global
 		{CAB3F965-9C33-44D8-A98D-396C143F9A6B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CAB3F965-9C33-44D8-A98D-396C143F9A6B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CAB3F965-9C33-44D8-A98D-396C143F9A6B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AAC8C2F7-861E-4AB8-9C69-C8235F439C69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AAC8C2F7-861E-4AB8-9C69-C8235F439C69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AAC8C2F7-861E-4AB8-9C69-C8235F439C69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AAC8C2F7-861E-4AB8-9C69-C8235F439C69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{18A88FFE-EC38-4E0A-B952-7D239BB52121}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18A88FFE-EC38-4E0A-B952-7D239BB52121}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18A88FFE-EC38-4E0A-B952-7D239BB52121}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18A88FFE-EC38-4E0A-B952-7D239BB52121}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4BD5F655-77E2-43DC-AEA5-B29F50F549B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4BD5F655-77E2-43DC-AEA5-B29F50F549B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4BD5F655-77E2-43DC-AEA5-B29F50F549B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4BD5F655-77E2-43DC-AEA5-B29F50F549B6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
