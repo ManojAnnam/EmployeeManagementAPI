@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace EmployeeManagementAPI.Repository.Migrations
 {
     [DbContext(typeof(EmployeeManagementContext))]
-    [Migration("20190627125803_EmployeeMangementDBIntialMigration")]
-    partial class EmployeeMangementDBIntialMigration
+    [Migration("20190628095727_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

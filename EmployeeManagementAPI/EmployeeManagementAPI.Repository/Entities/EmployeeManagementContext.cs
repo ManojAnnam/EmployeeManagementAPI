@@ -13,7 +13,7 @@ namespace EmployeeManagementAPI.Repository.Entities
         /// <param name="dbContextOptions">The dbContextOptions.</param>
         public EmployeeManagementContext(DbContextOptions<EmployeeManagementContext> dbContextOptions):base(dbContextOptions)
         {
-            Database.EnsureCreated();
+            Database.Migrate();
         }
 
         /// <summary>

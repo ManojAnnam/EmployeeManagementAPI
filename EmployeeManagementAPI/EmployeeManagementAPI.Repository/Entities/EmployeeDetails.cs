@@ -40,6 +40,10 @@ namespace EmployeeManagementAPI.Repository.Entities
         /// </summary>
         public int Salary { get; set; }
 
+        /// <summary>
+        /// Gets or sets a value indicating whether 
+        /// </summary>
+        public bool IsDeleted { get; set; }
 
     }
 }
