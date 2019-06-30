@@ -38,5 +38,23 @@ namespace EmployeeManagementAPI.Repository.Implementation
             return employeeDetails;
         }
 
+
+        /// <summary>
+        /// Delete the employee async.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns>The <see cref="T:Task{bool}"/>.</returns>
+        public async Task<bool> DeleteEmployeeAsync(int id)
+        {
+            var employee = await _employeeManagementContext.EmployeesDetails.SingleOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+            if (employee != null)
+            {
+                employee.IsDeleted = true;
+                await _employeeManagementContext.SaveChangesAsync();
+                return true;
+            }
+            return false;
+        }
+
     }
 }

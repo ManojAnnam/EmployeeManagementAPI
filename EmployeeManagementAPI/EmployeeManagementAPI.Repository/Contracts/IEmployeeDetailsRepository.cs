@@ -1,11 +1,9 @@
-﻿using EmployeeManagementAPI.Repository.Entities;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EmployeeManagementAPI.Repository.Contracts
+﻿namespace EmployeeManagementAPI.Repository.Contracts
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using EmployeeManagementAPI.Repository.Entities;
+   
     /// <summary>
     /// The IEmployeeDetailsRepository interface.
     /// </summary>
@@ -16,5 +14,12 @@ namespace EmployeeManagementAPI.Repository.Contracts
         /// </summary>
         /// <returns>The <see cref="T:Task{List{EmployeeDetails}}"/>.</returns>
         Task<List<EmployeeDetails>> GetAllEmployeesDetailsAsync();
+
+        /// <summary>
+        /// Delete the employee async.
+        /// </summary>
+        /// <param name="Id">The Id.</param>
+        /// <returns>The <see cref="T:Task{bool}"/>.</returns>
+        Task<bool> DeleteEmployeeAsync(int id);
     }
 }

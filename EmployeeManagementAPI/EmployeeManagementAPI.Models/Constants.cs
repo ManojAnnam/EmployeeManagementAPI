@@ -13,5 +13,10 @@ namespace EmployeeManagementAPI.Models
         /// The get all employees (const). Value: "GetAllEmployees".
         /// </summary>
         public const string GetAllEmployees = "GetAllEmployees";
+
+        /// <summary>
+        /// The delete employee (const). Value: "DeleteEmployee/{id}".
+        /// </summary>
+        public const string DeleteEmployee = "DeleteEmployee/{id}";
     }
 }

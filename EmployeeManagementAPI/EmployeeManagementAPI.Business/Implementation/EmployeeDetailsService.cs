@@ -33,7 +33,6 @@ namespace EmployeeManagementAPI.Business.Implementation
             _mapper = mapper;
         }
 
-
         /// <summary>
         /// Get the all employees details async.
         /// </summary>
@@ -48,6 +47,16 @@ namespace EmployeeManagementAPI.Business.Implementation
             }
 
             return employeeDetailsModels;
+        }
+
+        /// <summary>
+        /// Delete the employee async.
+        /// </summary>
+        /// <param name="id">The id.</param>
+        /// <returns>The <see cref="T:Task{bool}"/>.</returns>
+        public async Task<bool> DeleteEmployeeAsync(int id)
+        {
+            return await _employeeDetailsRepository.DeleteEmployeeAsync(id);
         }
     }
 }
