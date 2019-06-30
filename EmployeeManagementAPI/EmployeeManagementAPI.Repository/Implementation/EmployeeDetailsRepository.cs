@@ -38,6 +38,47 @@ namespace EmployeeManagementAPI.Repository.Implementation
             return employeeDetails;
         }
 
+        /// <summary>
+        /// Add the employee async.
+        /// </summary>
+        /// <param name="employeeDetails">The employeeDetails.</param>
+        /// <returns>The <see cref="T:Task{int}"/>.</returns>
+        public async Task<int> AddEmployeeAsync(EmployeeDetails employeeDetails)
+        {
+            var checkEmployee = _employeeManagementContext.EmployeesDetails
+                .Where(i => i.Name == employeeDetails.Name && !i.IsDeleted).FirstOrDefault();
+            if (checkEmployee == null)
+            {
+                _employeeManagementContext.EmployeesDetails.Add(employeeDetails);
+                await _employeeManagementContext.SaveChangesAsync();
+                return employeeDetails.Id;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        /// <summary>
+        /// Update the employee async.
+        /// </summary>
+        /// <param name="employeeDetails">The employeeDetails.</param>
+        /// <returns>The <see cref="T:Task{bool}"/>.</returns>
+        public async Task<bool> UpdateEmployeeAsync(EmployeeDetails employeeDetails)
+        {
+            var checkEmployee = _employeeManagementContext.EmployeesDetails
+                .Where(i => i.Id == employeeDetails.Id && !i.IsDeleted);
+            if (checkEmployee != null)
+            {
+                _employeeManagementContext.EmployeesDetails.Update(employeeDetails);
+                await _employeeManagementContext.SaveChangesAsync();
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         /// <summary>
         /// Delete the employee async.
@@ -55,6 +96,7 @@ namespace EmployeeManagementAPI.Repository.Implementation
             }
             return false;
         }
+
 
     }
 }

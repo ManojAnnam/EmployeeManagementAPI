@@ -17,9 +17,9 @@
 
 
         /// <summary>
-        /// Gets or sets the designatiom.
+        /// Gets or sets the designation.
         /// </summary>
-        public string Designatiom { get; set; }
+        public string Designation { get; set; }
 
         /// <summary>
         /// Gets or sets the salary.

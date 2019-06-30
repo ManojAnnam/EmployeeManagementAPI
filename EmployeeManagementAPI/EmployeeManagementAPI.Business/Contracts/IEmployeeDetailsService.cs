@@ -16,6 +16,20 @@
         Task<List<EmployeeDetailsModel>> GetAllEmployeesDetailsAsync();
 
         /// <summary>
+        /// Add the employee async.
+        /// </summary>
+        /// <param name="employeeDetails">The employeeDetails.</param>
+        /// <returns>The <see cref="T:Task{int}"/>.</returns>
+        Task<int> AddEmployeeAsync(EmployeeDetailsModel employeeDetails);
+
+        /// <summary>
+        /// Update the employee async.
+        /// </summary>
+        /// <param name="employeeDetails">The employeeDetails.</param>
+        /// <returns>The <see cref="T:Task{bool}"/>.</returns>
+        Task<bool> UpdateEmployeeAsync(EmployeeDetailsModel employeeDetails);
+
+        /// <summary>
         /// Delete the employee async.
         /// </summary>
         /// <param name="id">The id.</param>

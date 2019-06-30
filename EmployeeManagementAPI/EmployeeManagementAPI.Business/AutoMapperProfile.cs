@@ -10,6 +10,7 @@ namespace EmployeeManagementAPI.Business
         public AutoMapperProfile()
         {
             CreateMap<EmployeeDetails, EmployeeDetailsModel>();
+            CreateMap<EmployeeDetailsModel, EmployeeDetails>();
         }
     }
 }

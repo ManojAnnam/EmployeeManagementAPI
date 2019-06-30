@@ -2,6 +2,7 @@
 using EmployeeManagementAPI.Business.Contracts;
 using EmployeeManagementAPI.Models.Models;
 using EmployeeManagementAPI.Repository.Contracts;
+using EmployeeManagementAPI.Repository.Entities;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -47,6 +48,30 @@ namespace EmployeeManagementAPI.Business.Implementation
             }
 
             return employeeDetailsModels;
+        }
+
+        /// <summary>
+        /// Add the employee async.
+        /// </summary>
+        /// <param name="employeeDetailsModel">The employeeDetailsModel.</param>
+        /// <returns>The <see cref="T:Task{int}"/>.</returns>
+        public async Task<int> AddEmployeeAsync(EmployeeDetailsModel employeeDetailsModel)
+        {
+            EmployeeDetails employeeDetails = new EmployeeDetails();
+            employeeDetails = _mapper.Map<EmployeeDetails>(employeeDetailsModel);
+            return await _employeeDetailsRepository.AddEmployeeAsync(employeeDetails);
+        }
+
+        /// <summary>
+        /// Update the employee async.
+        /// </summary>
+        /// <param name="employeeDetailsModel">The employeeDetailsModel.</param>
+        /// <returns>The <see cref="T:Task{bool}"/>.</returns>
+        public async Task<bool> UpdateEmployeeAsync(EmployeeDetailsModel employeeDetailsModel)
+        {
+            EmployeeDetails employeeDetails = new EmployeeDetails();
+            employeeDetails = _mapper.Map<EmployeeDetails>(employeeDetailsModel);
+            return await _employeeDetailsRepository.UpdateEmployeeAsync(employeeDetails);
         }
 
         /// <summary>
