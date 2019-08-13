@@ -13,7 +13,7 @@
         /// Get the all employees details async.
         /// </summary>
         /// <returns>The <see cref="T:Task{List{EmployeeDetailsModel}}"/>.</returns>
-        Task<List<EmployeeDetailsModel>> GetAllEmployeesDetailsAsync();
+        Task<List<EmployeeDetailsModel>> GetAllEmployeesDetailsAsync(int skipCount, int displayCount);
 
         /// <summary>
         /// Add the employee async.

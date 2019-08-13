@@ -12,6 +12,7 @@
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
+
     public class EmployeeDetailsController : ControllerBase
     {
         /// <summary>
@@ -34,11 +35,11 @@
         /// <returns>The <see cref="IActionResult"/>.</returns>
         [Route(Constants.GetAllEmployees)]
         [HttpGet]
-        public async Task<IActionResult> GetAllEmployeesDetails()
+        public async Task<IActionResult> GetAllEmployeesDetails(int skipCount, int displayCount)
         {
             try
             {
-                var employeeDetails = await _employeeDetailsService.GetAllEmployeesDetailsAsync();
+                var employeeDetails = await _employeeDetailsService.GetAllEmployeesDetailsAsync(skipCount, displayCount);
                 return Ok(employeeDetails);
 
             }

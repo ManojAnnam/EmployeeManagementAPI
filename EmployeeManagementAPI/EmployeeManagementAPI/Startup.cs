@@ -36,10 +36,22 @@ namespace EmployeeManagementAPI
         /// <param name="services">The services.</param>
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAll",
+                    builder =>
+                    {
+                        builder
+                        .AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader()
+                        .AllowCredentials();
+                    });
+            });
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddScoped<IEmployeeDetailsService, EmployeeDetailsService>();
-           
+            services.AddScoped<IEmployeeDetailsService, EmployeeDetailsService>();          
             services.RegisterApiDependencies(Configuration);
+           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -59,9 +71,11 @@ namespace EmployeeManagementAPI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
-
+            
             app.UseHttpsRedirection();
+            app.UseCors("AllowAll");
             app.UseMvc();
+            
         }
     }
 }

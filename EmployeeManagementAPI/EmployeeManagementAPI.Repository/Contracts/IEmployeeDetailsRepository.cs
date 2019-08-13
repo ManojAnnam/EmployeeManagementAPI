@@ -1,9 +1,9 @@
 ﻿namespace EmployeeManagementAPI.Repository.Contracts
 {
+    using EmployeeManagementAPI.Repository.Entities;
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using EmployeeManagementAPI.Repository.Entities;
-   
+
     /// <summary>
     /// The IEmployeeDetailsRepository interface.
     /// </summary>
@@ -13,7 +13,7 @@
         /// Get the all employees details async.
         /// </summary>
         /// <returns>The <see cref="T:Task{List{EmployeeDetails}}"/>.</returns>
-        Task<List<EmployeeDetails>> GetAllEmployeesDetailsAsync();
+        Task<List<EmployeeDetails>> GetAllEmployeesDetailsAsync(int skipCount, int displayCount);
 
         /// <summary>
         /// Add the employee async.

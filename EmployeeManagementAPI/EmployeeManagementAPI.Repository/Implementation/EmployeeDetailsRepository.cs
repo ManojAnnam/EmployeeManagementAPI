@@ -31,10 +31,11 @@ namespace EmployeeManagementAPI.Repository.Implementation
         /// Get the all employees details async.
         /// </summary>
         /// <returns>The <see cref="T:Task{List{EmployeeDetails}}"/>.</returns>
-        public async Task<List<EmployeeDetails>> GetAllEmployeesDetailsAsync()
+        public async Task<List<EmployeeDetails>> GetAllEmployeesDetailsAsync(int skipCount, int displayCount)
         {
             List<EmployeeDetails> employeeDetails = new List<EmployeeDetails>();
-            employeeDetails = await _employeeManagementContext.EmployeesDetails.Where(i => (i.IsDeleted == false)).ToListAsync();
+            //employeeDetails = await _employeeManagementContext.EmployeesDetails.Where(i => (i.IsDeleted == false)).Skip(20).Take(5).ToListAsync();
+            employeeDetails = await _employeeManagementContext.EmployeesDetails.Skip(skipCount).Take(displayCount).Where(i => (i.IsDeleted == false)).ToListAsync();
             return employeeDetails;
         }
 

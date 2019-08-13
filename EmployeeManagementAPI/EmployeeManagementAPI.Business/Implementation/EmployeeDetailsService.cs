@@ -38,10 +38,10 @@ namespace EmployeeManagementAPI.Business.Implementation
         /// Get the all employees details async.
         /// </summary>
         /// <returns>The <see cref="T:Task{List{EmployeeDetailsModel}}"/>.</returns>
-        public async Task<List<EmployeeDetailsModel>> GetAllEmployeesDetailsAsync()
+        public async Task<List<EmployeeDetailsModel>> GetAllEmployeesDetailsAsync(int skipCount, int displayCount)
         {
             List<EmployeeDetailsModel> employeeDetailsModels = new List<EmployeeDetailsModel>();
-            var employees = await _employeeDetailsRepository.GetAllEmployeesDetailsAsync();
+            var employees = await _employeeDetailsRepository.GetAllEmployeesDetailsAsync(skipCount, displayCount);
             if (employees != null && employees.Count > 0)
             {
                 employeeDetailsModels = _mapper.Map<List<EmployeeDetailsModel>>(employees);
