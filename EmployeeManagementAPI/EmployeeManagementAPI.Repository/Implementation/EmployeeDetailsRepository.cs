@@ -35,7 +35,7 @@ namespace EmployeeManagementAPI.Repository.Implementation
         {
             List<EmployeeDetails> employeeDetails = new List<EmployeeDetails>();
             //employeeDetails = await _employeeManagementContext.EmployeesDetails.Where(i => (i.IsDeleted == false)).Skip(20).Take(5).ToListAsync();
-            employeeDetails = await _employeeManagementContext.EmployeesDetails.Skip(skipCount).Take(displayCount).Where(i => (i.IsDeleted == false)).ToListAsync();
+            employeeDetails = await _employeeManagementContext.EmployeesDetails.Where(i => (i.IsDeleted == false)).Skip(skipCount).Take(displayCount).ToListAsync();
             return employeeDetails;
         }
 
